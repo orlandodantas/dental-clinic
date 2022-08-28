@@ -1,0 +1,7 @@
+[Bb]uild*
+[Dd]ist*
+[Bb]in*
+package-lock.json
+nyc.config.js
+node_modules/
+tests/
