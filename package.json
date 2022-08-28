@@ -1,0 +1,19 @@
+{
+  "name": "dentalclinic",
+  "version": "1.0.0",
+  "description": "API Dental Clinic",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orlandodantas/dental-clinic.git"
+  },
+  "author": "Orlando Dantas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/orlandodantas/dental-clinic/issues"
+  },
+  "homepage": "https://github.com/orlandodantas/dental-clinic#readme"
+}
