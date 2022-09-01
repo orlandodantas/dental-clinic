@@ -29,7 +29,7 @@ export enum Role {
   USER = 'USER',
 }
 
-export type UserDTO = {
+type UserDTO = {
   id?: string;
   name: string;
   email: string;
