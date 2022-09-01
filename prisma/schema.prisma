@@ -23,7 +23,7 @@ model User {
   role      Role
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
-  Sale      Sale[]
+  sale      Sale[]
 
   @@map("users")
 }
@@ -38,7 +38,7 @@ model Patient {
   cep       String?
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
-  Sale      Sale[]
+  sale      Sale[]
 
   @@map("patients")
 }
@@ -49,7 +49,7 @@ model Service {
   value       Float
   createdAt   DateTime   @default(now()) @map("created_at")
   updatedAt   DateTime   @updatedAt @map("updated_at")
-  SaleItem    SaleItem[]
+  saleItem    SaleItem[]
 
   @@map("services")
 }
@@ -62,8 +62,8 @@ model Sale {
   userId             String               @map("user_id")
   createdAt          DateTime             @default(now()) @map("created_at")
   updatedAt          DateTime             @updatedAt @map("updated_at")
-  SaleItem           SaleItem[]
-  AccountsReceivable AccountsReceivable[]
+  saleItem           SaleItem[]
+  accountsReceivable AccountsReceivable[]
 
   @@map("sales")
 }
