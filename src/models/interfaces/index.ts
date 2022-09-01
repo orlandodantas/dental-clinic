@@ -1,4 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import IUserModel from './IUser';
+import IPatientModel from './IPatientModel';
+import IUserModel from './IUserModel';
 
-export { IUserModel };
+export { IUserModel, IPatientModel };
