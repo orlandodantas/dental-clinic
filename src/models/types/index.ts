@@ -1,5 +1,6 @@
 import PatientDTO from './PatientDTO';
+import SaleDTO from './SaleDTO';
 import ServiceDTO from './ServiceDTO';
-import { Role, UserDTO } from './UserDTO';
+import UserDTO, { Role } from './UserDTO';
 
-export { UserDTO, Role, PatientDTO, ServiceDTO };
+export { UserDTO, Role, PatientDTO, ServiceDTO, SaleDTO };
