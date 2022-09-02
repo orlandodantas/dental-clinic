@@ -1,6 +1,6 @@
 import { PrismaClient, Service } from '@prisma/client';
+import { ServiceDTO } from '../types';
 import { IServiceModel } from './interfaces';
-import { ServiceDTO } from './types';
 
 export default class ServiceModel implements IServiceModel {
   private _connection: PrismaClient;

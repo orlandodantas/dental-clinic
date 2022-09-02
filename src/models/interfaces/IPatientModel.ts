@@ -1,4 +1,4 @@
-import { PatientDTO } from '../types';
+import { PatientDTO } from '../../types';
 
 export default interface IPatientModel {
   getAll(skip: number, limit: number): Promise<PatientDTO[]>;

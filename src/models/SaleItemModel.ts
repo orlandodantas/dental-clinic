@@ -1,6 +1,6 @@
 import { PrismaClient, SaleItem } from '@prisma/client';
+import { SaleItemDTO } from '../types';
 import { ISaleItemModel } from './interfaces';
-import { SaleItemDTO } from './types';
 
 export default class SaleItemModel implements ISaleItemModel {
   private _connection: PrismaClient;

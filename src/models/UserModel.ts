@@ -1,6 +1,6 @@
 import { PrismaClient, User } from '@prisma/client';
+import { UserDTO } from '../types';
 import { IUserModel } from './interfaces';
-import { UserDTO } from './types';
 
 export default class UserModel implements IUserModel {
   private _connection: PrismaClient;

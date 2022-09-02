@@ -1,6 +1,6 @@
 import { AccountsReceivable, PrismaClient } from '@prisma/client';
+import { AccountsReceivableDTO } from '../types';
 import { IAccountsReceivableModel } from './interfaces';
-import { AccountsReceivableDTO } from './types';
 
 export default class AccountsReceivableModel implements IAccountsReceivableModel {
   private _connection: PrismaClient;

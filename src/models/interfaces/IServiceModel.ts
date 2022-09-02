@@ -1,4 +1,4 @@
-import { ServiceDTO } from '../types';
+import { ServiceDTO } from '../../types';
 
 export default interface IServiceModel {
   getAll(skip: number, limit: number): Promise<ServiceDTO[]>;

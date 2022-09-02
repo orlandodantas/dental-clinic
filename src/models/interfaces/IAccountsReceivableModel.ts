@@ -1,4 +1,4 @@
-import { AccountsReceivableDTO } from '../types';
+import { AccountsReceivableDTO } from '../../types';
 
 export default interface IAccountsReceivableModel {
   getAll(skip: number, limit: number): Promise<AccountsReceivableDTO[]>;

@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
+import { PatientDTO } from '../types';
 import { IPatientModel } from './interfaces';
-import { PatientDTO } from './types';
 
 export default class PatientModel implements IPatientModel {
   private _connection: PrismaClient;

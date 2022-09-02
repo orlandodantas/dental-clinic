@@ -1,4 +1,4 @@
-import { SaleItemDTO } from '../types';
+import { SaleItemDTO } from '../../types';
 
 export default interface ISaleItemModel {
   getAll(skip: number, limit: number): Promise<SaleItemDTO[]>;

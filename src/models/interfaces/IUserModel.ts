@@ -1,4 +1,4 @@
-import { UserDTO } from '../types';
+import { UserDTO } from '../../types';
 
 export default interface IUserModel {
   getAll(skip: number, limit: number): Promise<UserDTO[]>;
