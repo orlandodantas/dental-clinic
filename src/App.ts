@@ -1,6 +1,7 @@
 import cors from 'cors';
 import express from 'express';
 import { CatchError } from './middleware';
+import { UserRouter } from './routers';
 
 export default class App {
   public app: express.Express;
@@ -11,7 +12,9 @@ export default class App {
   }
 
   private middleware(): void {
-    this.app.use(express.json).use(cors);
+    this.app.use(express.json()).use(cors());
+    this.app.use('/users', new UserRouter().route);
+
     this.app.use(CatchError.error);
   }
 
