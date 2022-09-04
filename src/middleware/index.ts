@@ -1,4 +1,5 @@
-/* eslint-disable import/prefer-default-export */
 import CatchError from './CatchError';
+import Pagination from './Pagination';
+import UserMiddleware from './UserMiddleware';
 
-export { CatchError };
+export { CatchError, Pagination, UserMiddleware };
