@@ -16,13 +16,14 @@ export default class CatchError {
       });
     }
 
-    if (err.statusCode) return res.status(err.statusCode).json(err.message);
+    if (err.statusCode) return res.status(err.statusCode).json({ message: err.message });
 
     console.error(err);
     return res
       .status(StatusCodes.INTERNAL_SERVER_ERROR)
-      .json(
-        'Erro interno no servidor! Estamos trabalhando para resolver isto o mais rápido possível',
-      );
+      .json({
+        message:
+          'Erro interno no servidor! Estamos trabalhando para resolver isto o mais rápido possível',
+      });
   }
 }
