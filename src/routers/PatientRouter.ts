@@ -1,7 +1,6 @@
 import { Router } from 'express';
 import { PatientFactory } from '../factories';
-import Pagination from '../middleware/Pagination';
-import UserMiddleware from '../middleware/UserMiddleware';
+import { Pagination, PatientValidate } from '../middleware';
 
 export default class PatientRouter {
   public route: Router;
@@ -18,8 +17,8 @@ export default class PatientRouter {
     this.route
       .get('/', Pagination.create, patientController.getAll)
       .get('/:id', patientController.getById)
-      .post('/', UserMiddleware.verifyCreate, patientController.create)
-      .put('/:id', UserMiddleware.verifyUpdate, patientController.update)
+      .post('/', PatientValidate.verify, patientController.create)
+      .put('/:id', PatientValidate.verify, patientController.update)
       .delete('/:id', patientController.delete);
   }
 }
