@@ -45,7 +45,6 @@ export default class UserModel implements IUserModel {
   public async getByEmail(email: string): Promise<UserDTO | null> {
     return this._connection.user.findUnique({
       where: { email },
-      select: this._selectFields,
     });
   }
 
