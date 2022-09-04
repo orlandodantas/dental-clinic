@@ -10,20 +10,12 @@ export default class CatchError {
     res: Response,
     _next: NextFunction,
   ): Response {
-    if (err.name === 'JsonWebTokenError' || err.name === 'TokenExpiredError') {
-      return res.status(StatusCodes.UNAUTHORIZED).json({
-        message: 'Token inválido ou expirado',
-      });
-    }
-
     if (err.statusCode) return res.status(err.statusCode).json({ message: err.message });
 
     console.error(err);
-    return res
-      .status(StatusCodes.INTERNAL_SERVER_ERROR)
-      .json({
-        message:
-          'Erro interno no servidor! Estamos trabalhando para resolver isto o mais rápido possível',
-      });
+    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+      message:
+        'Erro interno no servidor! Estamos trabalhando para resolver isto o mais rápido possível',
+    });
   }
 }
