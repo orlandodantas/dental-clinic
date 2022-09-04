@@ -1,5 +1,5 @@
-/* eslint-disable import/prefer-default-export */
 import IAccountsReceivableModel from './IAccountsReceivableModel';
+import IGenericModel from './IGenericModel';
 import IPatientModel from './IPatientModel';
 import ISaleItemModel from './ISaleItemModel';
 import ISaleModel from './ISaleModel';
@@ -13,4 +13,5 @@ export {
   ISaleModel,
   ISaleItemModel,
   IAccountsReceivableModel,
+  IGenericModel,
 };
