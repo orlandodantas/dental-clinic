@@ -1,9 +1,6 @@
 import { UserDTO } from '../../types';
+import IGenericModel from './IGenericModel';
 
-export default interface IUserModel {
-  getAll(skip: number, limit: number): Promise<UserDTO[]>;
-  getByID(id: string): Promise<UserDTO>;
-  create(user: UserDTO): Promise<UserDTO>;
-  update(id: string, user: UserDTO): Promise<UserDTO>;
-  delete(id: string): Promise<void>;
+export default interface IUserModel extends IGenericModel<UserDTO> {
+  getByEmail(email: string): Promise<UserDTO | null>;
 }
