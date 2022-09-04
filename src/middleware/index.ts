@@ -1,5 +1,6 @@
+import Authorization from './Authorization';
 import CatchError from './CatchError';
 import Pagination from './Pagination';
-import UserMiddleware from './UserMiddleware';
+import UserValidate from './UserValidate';
 
-export { CatchError, Pagination, UserMiddleware };
+export { CatchError, Pagination, UserValidate, Authorization };

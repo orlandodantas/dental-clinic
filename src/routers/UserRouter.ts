@@ -1,7 +1,6 @@
 import { Router } from 'express';
 import { UserFactory } from '../factories';
-import Pagination from '../middleware/Pagination';
-import UserMiddleware from '../middleware/UserMiddleware';
+import { Pagination, UserValidate } from '../middleware';
 
 export default class UserRouter {
   public route: Router;
@@ -18,8 +17,8 @@ export default class UserRouter {
     this.route
       .get('/', Pagination.create, userController.getAll)
       .get('/:id', userController.getById)
-      .post('/', UserMiddleware.verifyCreate, userController.create)
-      .put('/:id', UserMiddleware.verifyUpdate, userController.update)
+      .post('/', UserValidate.verifyCreate, userController.create)
+      .put('/:id', UserValidate.verifyUpdate, userController.update)
       .delete('/:id', userController.delete);
   }
 }
