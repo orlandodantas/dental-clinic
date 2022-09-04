@@ -1,9 +1,4 @@
 import { SaleItemDTO } from '../../types';
+import IGenericModel from './IGenericModel';
 
-export default interface ISaleItemModel {
-  getAll(skip: number, limit: number): Promise<SaleItemDTO[]>;
-  getByID(id: string): Promise<SaleItemDTO>;
-  create(saleItem: SaleItemDTO): Promise<SaleItemDTO>;
-  update(id: string, saleItem: SaleItemDTO): Promise<SaleItemDTO>;
-  delete(id: string): Promise<void>;
-}
+export default interface ISaleItemModel extends IGenericModel<SaleItemDTO> {}

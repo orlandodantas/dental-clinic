@@ -1,9 +1,4 @@
 import { PatientDTO } from '../../types';
+import IGenericModel from './IGenericModel';
 
-export default interface IPatientModel {
-  getAll(skip: number, limit: number): Promise<PatientDTO[]>;
-  getByID(id: string): Promise<PatientDTO>;
-  create(user: PatientDTO): Promise<PatientDTO>;
-  update(id: string, user: PatientDTO): Promise<PatientDTO>;
-  delete(id: string): Promise<void>;
-}
+export default interface IPatientModel extends IGenericModel<PatientDTO> {}
