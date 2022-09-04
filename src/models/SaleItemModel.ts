@@ -16,8 +16,8 @@ export default class SaleItemModel implements ISaleItemModel {
     });
   }
 
-  public async getByID(id: string): Promise<SaleItemDTO> {
-    return this._connection.saleItem.findUniqueOrThrow({
+  public async getByID(id: string): Promise<SaleItemDTO | null> {
+    return this._connection.saleItem.findUnique({
       where: { id },
     });
   }
@@ -36,7 +36,7 @@ export default class SaleItemModel implements ISaleItemModel {
   }
 
   public async delete(id: string): Promise<void> {
-    this._connection.saleItem.delete({
+    await this._connection.saleItem.delete({
       where: { id },
     });
   }

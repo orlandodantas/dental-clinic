@@ -16,8 +16,8 @@ export default class AccountsReceivableModel implements IAccountsReceivableModel
     });
   }
 
-  public async getByID(id: string): Promise<AccountsReceivableDTO> {
-    return this._connection.accountsReceivable.findUniqueOrThrow({
+  public async getByID(id: string): Promise<AccountsReceivableDTO | null> {
+    return this._connection.accountsReceivable.findUnique({
       where: { id },
     });
   }
@@ -39,7 +39,7 @@ export default class AccountsReceivableModel implements IAccountsReceivableModel
   }
 
   public async delete(id: string): Promise<void> {
-    this._connection.accountsReceivable.delete({
+    await this._connection.accountsReceivable.delete({
       where: { id },
     });
   }

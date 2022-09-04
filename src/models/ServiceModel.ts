@@ -16,8 +16,8 @@ export default class ServiceModel implements IServiceModel {
     });
   }
 
-  public async getByID(id: string): Promise<ServiceDTO> {
-    return this._connection.service.findUniqueOrThrow({
+  public async getByID(id: string): Promise<ServiceDTO | null> {
+    return this._connection.service.findUnique({
       where: { id },
     });
   }
@@ -36,7 +36,7 @@ export default class ServiceModel implements IServiceModel {
   }
 
   public async delete(id: string): Promise<void> {
-    this._connection.service.delete({
+    await this._connection.service.delete({
       where: { id },
     });
   }

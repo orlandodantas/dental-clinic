@@ -16,8 +16,8 @@ export default class PatientModel implements IPatientModel {
     });
   }
 
-  public async getByID(id: string): Promise<PatientDTO> {
-    return this._connection.patient.findUniqueOrThrow({
+  public async getByID(id: string): Promise<PatientDTO | null> {
+    return this._connection.patient.findUnique({
       where: { id },
     });
   }
@@ -36,7 +36,7 @@ export default class PatientModel implements IPatientModel {
   }
 
   public async delete(id: string): Promise<void> {
-    this._connection.patient.delete({
+    await this._connection.patient.delete({
       where: { id },
     });
   }
