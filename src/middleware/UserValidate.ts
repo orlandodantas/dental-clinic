@@ -4,7 +4,7 @@ import { StatusCodes } from 'http-status-codes';
 import Joi from 'joi';
 import { Role } from '../types';
 
-export default class UserMiddleware {
+export default class UserValidate {
   public static verifyCreate(req: Request, res: Response, next: NextFunction): Response | void {
     const schema = Joi.object({
       name: Joi.string().min(3).max(80).required().messages({
