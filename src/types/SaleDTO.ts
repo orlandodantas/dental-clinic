@@ -3,6 +3,7 @@ import UserDTO from './UserDTO';
 
 type SaleDTO = {
   id?: string;
+  totalValue: number;
   patient?: PatientDTO;
   patientId: string;
   user?: UserDTO;

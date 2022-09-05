@@ -2,9 +2,9 @@ import SaleDTO from './SaleDTO';
 
 type AccountsReceivableDTO = {
   id?: string;
-  portion: number;
   value: number;
-  receivingDate?: Date;
+  expirationDate: Date;
+  receivingDate?: Date | null;
   sale?: SaleDTO;
   saleId: string;
   createdAt?: Date;

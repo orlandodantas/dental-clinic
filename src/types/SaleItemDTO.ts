@@ -5,7 +5,6 @@ type SaleItemDTO = {
   id?: string;
   quantity: number;
   value: number;
-  amount: number;
   sale?: SaleDTO;
   saleId: string;
   service?: ServiceDTO;
