@@ -38,9 +38,8 @@ export default class UserValidate {
 
     if (error) {
       console.error(error);
+      return res.status(StatusCodes.BAD_REQUEST).json({ message: error.message });
     }
-
-    if (error) return res.status(StatusCodes.BAD_REQUEST).json({ message: error.message });
 
     next();
   }
@@ -72,9 +71,8 @@ export default class UserValidate {
 
     if (error) {
       console.error(error);
+      return res.status(StatusCodes.BAD_REQUEST).json({ message: error.message });
     }
-
-    if (error) return res.status(StatusCodes.BAD_REQUEST).json({ message: error.message });
 
     next();
   }
@@ -99,9 +97,8 @@ export default class UserValidate {
 
     if (error) {
       console.error(error);
+      return res.status(StatusCodes.BAD_REQUEST).json({ message: error.message });
     }
-
-    if (error) return res.status(StatusCodes.BAD_REQUEST).json({ message: error.message });
 
     next();
   }
