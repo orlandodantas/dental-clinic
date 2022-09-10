@@ -1,4 +1,7 @@
+/* eslint-disable import/no-cycle */
+import AccountsReceivableDTO from './AccountsReceivableDTO';
 import PatientDTO from './PatientDTO';
+import SaleItemDTO from './SaleItemDTO';
 import UserDTO from './UserDTO';
 
 type SaleDTO = {
@@ -10,8 +13,8 @@ type SaleDTO = {
   userId: string;
   createdAt: Date;
   updatedAt: Date;
-  saleItem?: [];
-  accountsReceivable?: [];
+  saleItem?: SaleItemDTO[];
+  accountsReceivable?: AccountsReceivableDTO[];
 };
 
 export default SaleDTO;
