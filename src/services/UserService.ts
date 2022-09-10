@@ -36,6 +36,7 @@ export default class UserService extends GenericService<UserDTO> implements IUse
     if (!isPassword) throw new UnauthorizedError('Email e/ou Senha Inválida!');
 
     const payload = {
+      id: userData.id as string,
       name: userData.name,
       email: userData.email,
       role: userData.role as Role,
