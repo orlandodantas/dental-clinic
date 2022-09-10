@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import SaleDTO from './SaleDTO';
 import ServiceDTO from './ServiceDTO';
 
