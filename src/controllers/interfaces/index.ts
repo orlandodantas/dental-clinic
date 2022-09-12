@@ -1,3 +1,4 @@
+import IAccountsReceivableController from './IAccountsReceivableController';
 import IGenericController from './IGenericController';
 import IPatientController from './IPatientController';
 import ISaleController from './ISaleController';
@@ -10,4 +11,5 @@ export {
   IPatientController,
   IServiceController,
   ISaleController,
+  IAccountsReceivableController,
 };
