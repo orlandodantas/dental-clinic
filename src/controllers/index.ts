@@ -2,6 +2,7 @@ import AccountsReceivableController from './AccountsReceivableController';
 import GenericController from './GenericController';
 import PatientController from './PatientController';
 import SaleController from './SaleController';
+import SaleItemController from './SaleItemController';
 import ServiceController from './ServiceController';
 import UserController from './UserController';
 
@@ -12,4 +13,5 @@ export {
   ServiceController,
   SaleController,
   AccountsReceivableController,
+  SaleItemController,
 };
