@@ -22,6 +22,12 @@ export default class SaleItemModel implements ISaleItemModel {
     });
   }
 
+  public async getBySale(saleId: string): Promise<SaleItemDTO[]> {
+    return this._connection.saleItem.findMany({
+      where: { saleId },
+    });
+  }
+
   public async create(saleItem: SaleItemDTO): Promise<SaleItemDTO> {
     return this._connection.saleItem.create({
       data: saleItem as SaleItem,
