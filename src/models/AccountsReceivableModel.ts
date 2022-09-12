@@ -38,6 +38,17 @@ export default class AccountsReceivableModel implements IAccountsReceivableModel
     });
   }
 
+  public async patchReceive(id: string, date: Date): Promise<AccountsReceivableDTO> {
+    return this._connection.accountsReceivable.update({
+      where: {
+        id,
+      },
+      data: {
+        receivingDate: date,
+      },
+    });
+  }
+
   public async delete(id: string): Promise<void> {
     await this._connection.accountsReceivable.delete({
       where: { id },
