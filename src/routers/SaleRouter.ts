@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { SaleFactory } from '../factories';
+import { SaleFactory, SaleItemFactory } from '../factories';
 import { Authorization, Pagination, SaleValidate } from '../middleware';
 
 export default class SaleRouter {
@@ -12,6 +12,7 @@ export default class SaleRouter {
   }
 
   private router(): void {
+    // Sale
     const saleController = SaleFactory.create();
 
     this.route
@@ -20,5 +21,12 @@ export default class SaleRouter {
       .post('/', Authorization.authenticate, SaleValidate.verifyCreate, saleController.create)
       .put('/:id', Authorization.authenticate, SaleValidate.verifyUpdate, saleController.update)
       .delete('/:id', saleController.delete);
+
+    // SaleItems
+    const saleItemController = SaleItemFactory.create();
+
+    this.route
+      .get('/:id/items', Pagination.create, saleItemController.getBySale)
+      .get('/:id/items/:saleId', saleItemController.getById);
   }
 }
