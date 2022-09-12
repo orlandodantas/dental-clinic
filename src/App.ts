@@ -1,7 +1,14 @@
 import cors from 'cors';
 import express from 'express';
 import { CatchError } from './middleware';
-import { LoginRouter, PatientRouter, SaleRouter, ServiceRouter, UserRouter } from './routers';
+import {
+  AccountsReceivableRouter,
+  LoginRouter,
+  PatientRouter,
+  SaleRouter,
+  ServiceRouter,
+  UserRouter,
+} from './routers';
 
 export default class App {
   public app: express.Express;
@@ -21,7 +28,8 @@ export default class App {
       .use('/login', new LoginRouter().route)
       .use('/patients', new PatientRouter().route)
       .use('/services', new ServiceRouter().route)
-      .use('/sales', new SaleRouter().route);
+      .use('/sales', new SaleRouter().route)
+      .use('/accounts-receivable', new AccountsReceivableRouter().route);
 
     // Middleware de Error
     this.app.use(CatchError.error);
