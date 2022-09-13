@@ -17,6 +17,18 @@ export default class AccountsReceivableRouter {
     this.route
       .get('/', Authorization.authenticate, Pagination.create, accountsReceivableController.getAll)
       .get('/:id', Authorization.authenticate, accountsReceivableController.getById)
+      .post(
+        '/received',
+        Authorization.authenticate,
+        AccountsReceivableValidate.verifyReceivables,
+        accountsReceivableController.getByReceived,
+      )
+      .post(
+        '/receive',
+        Authorization.authenticate,
+        AccountsReceivableValidate.verifyReceivables,
+        accountsReceivableController.getByReceive,
+      )
       .patch(
         '/receive/:id',
         Authorization.authenticate,
