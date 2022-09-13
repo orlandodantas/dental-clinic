@@ -22,4 +22,12 @@ export default class AccountsReceivableService
 
     return this._accountsReceivableModel.patchReceive(id, date);
   }
+
+  public async getByReceived(dateInitial: Date, dateEnd: Date): Promise<AccountsReceivableDTO[]> {
+    return this._accountsReceivableModel.getByReceived(dateInitial, dateEnd);
+  }
+
+  public async getByReceive(dateInitial: Date, dateEnd: Date): Promise<AccountsReceivableDTO[]> {
+    return this._accountsReceivableModel.getByReceive(dateInitial, dateEnd);
+  }
 }
