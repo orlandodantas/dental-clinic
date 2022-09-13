@@ -68,7 +68,6 @@ export default class SaleValidate {
     const { error } = schema.validate(req.body);
 
     if (error) {
-      console.error(error);
       return res.status(StatusCodes.BAD_REQUEST).json({ message: error.message });
     }
 
@@ -157,7 +156,6 @@ export default class SaleValidate {
     const { error } = schema.validate(req.body);
 
     if (error) {
-      console.error(error);
       return res.status(StatusCodes.BAD_REQUEST).json({ message: error.message });
     }
 
