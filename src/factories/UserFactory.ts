@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import { UserController } from '../controllers';
 import { IUserController } from '../controllers/interfaces';
 import { connection, UserModel } from '../models';

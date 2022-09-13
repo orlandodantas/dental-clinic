@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import AccountsReceivableFactory from './AccountsReceivableFactory';
 import PatientFactory from './PatientFactory';
 import SaleFactory from './SaleFactory';

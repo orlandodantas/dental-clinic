@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import { SaleItemController } from '../controllers';
 import { ISaleItemController } from '../controllers/interfaces';
 import { connection, SaleItemModel } from '../models';

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import { AccountsReceivableController } from '../controllers';
 import { AccountsReceivableModel, connection } from '../models';
 import { AccountsReceivableService } from '../services';

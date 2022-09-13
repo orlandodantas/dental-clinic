@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import AccountsReceivableController from './AccountsReceivableController';
 import GenericController from './GenericController';
 import PatientController from './PatientController';
