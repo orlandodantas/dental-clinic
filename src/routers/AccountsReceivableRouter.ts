@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { AccountsReceivableFactory } from '../factories';
-import { AccountsReceivableValidate, Pagination } from '../middleware';
+import { AccountsReceivableValidate, Authorization, Pagination } from '../middleware';
 
 export default class AccountsReceivableRouter {
   public route: Router;
@@ -15,10 +15,11 @@ export default class AccountsReceivableRouter {
     const accountsReceivableController = AccountsReceivableFactory.create();
 
     this.route
-      .get('/', Pagination.create, accountsReceivableController.getAll)
-      .get('/:id', accountsReceivableController.getById)
+      .get('/', Authorization.authenticate, Pagination.create, accountsReceivableController.getAll)
+      .get('/:id', Authorization.authenticate, accountsReceivableController.getById)
       .patch(
         '/receive/:id',
+        Authorization.authenticate,
         AccountsReceivableValidate.verify,
         accountsReceivableController.patchReceive,
       );

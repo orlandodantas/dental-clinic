@@ -16,17 +16,22 @@ export default class SaleRouter {
     const saleController = SaleFactory.create();
 
     this.route
-      .get('/', Pagination.create, saleController.getAll)
-      .get('/:id', saleController.getById)
+      .get('/', Authorization.authenticate, Pagination.create, saleController.getAll)
+      .get('/:id', Authorization.authenticate, saleController.getById)
       .post('/', Authorization.authenticate, SaleValidate.verifyCreate, saleController.create)
       .put('/:id', Authorization.authenticate, SaleValidate.verifyUpdate, saleController.update)
-      .delete('/:id', saleController.delete);
+      .delete('/:id', Authorization.authenticate, saleController.delete);
 
     // SaleItems
     const saleItemController = SaleItemFactory.create();
 
     this.route
-      .get('/:id/items', Pagination.create, saleItemController.getBySale)
-      .get('/:id/items/:saleId', saleItemController.getById);
+      .get(
+        '/:id/items',
+        Authorization.authenticate,
+        Pagination.create,
+        saleItemController.getBySale,
+      )
+      .get('/:id/items/:saleId', Authorization.authenticate, saleItemController.getById);
   }
 }

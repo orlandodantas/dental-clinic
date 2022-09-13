@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { ServiceFactory } from '../factories';
-import { Pagination, ServiceValidate } from '../middleware';
+import { Authorization, Pagination, ServiceValidate } from '../middleware';
 
 export default class ServiceRouter {
   public route: Router;
@@ -15,10 +15,10 @@ export default class ServiceRouter {
     const serviceController = ServiceFactory.create();
 
     this.route
-      .get('/', Pagination.create, serviceController.getAll)
-      .get('/:id', serviceController.getById)
-      .post('/', ServiceValidate.verify, serviceController.create)
-      .put('/:id', ServiceValidate.verify, serviceController.update)
-      .delete('/:id', serviceController.delete);
+      .get('/', Authorization.authenticate, Pagination.create, serviceController.getAll)
+      .get('/:id', Authorization.authenticate, serviceController.getById)
+      .post('/', Authorization.authenticate, ServiceValidate.verify, serviceController.create)
+      .put('/:id', Authorization.authenticate, ServiceValidate.verify, serviceController.update)
+      .delete('/:id', Authorization.authenticate, serviceController.delete);
   }
 }

@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { UserFactory } from '../factories';
-import { Pagination, UserValidate } from '../middleware';
+import { Authorization, Pagination, UserValidate } from '../middleware';
 
 export default class UserRouter {
   public route: Router;
@@ -15,10 +15,10 @@ export default class UserRouter {
     const userController = UserFactory.create();
 
     this.route
-      .get('/', Pagination.create, userController.getAll)
-      .get('/:id', userController.getById)
+      .get('/', Authorization.authenticate, Pagination.create, userController.getAll)
+      .get('/:id', Authorization.authenticate, userController.getById)
       .post('/', UserValidate.verifyCreate, userController.create)
-      .put('/:id', UserValidate.verifyUpdate, userController.update)
-      .delete('/:id', userController.delete);
+      .put('/:id', Authorization.authenticate, UserValidate.verifyUpdate, userController.update)
+      .delete('/:id', Authorization.authenticate, userController.delete);
   }
 }
