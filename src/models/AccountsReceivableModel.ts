@@ -22,6 +22,32 @@ export default class AccountsReceivableModel implements IAccountsReceivableModel
     });
   }
 
+  public async getByReceived(dateInitial: Date, dateEnd: Date): Promise<AccountsReceivableDTO[]> {
+    return this._connection.accountsReceivable.findMany({
+      where: {
+        receivingDate: {
+          gte: dateInitial,
+          lte: dateEnd,
+        },
+      },
+    });
+  }
+
+  public async getByReceive(dateInitial: Date, dateEnd: Date): Promise<AccountsReceivableDTO[]> {
+    return this._connection.accountsReceivable.findMany({
+      where: {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        AND: {
+          expirationDate: {
+            gte: dateInitial,
+            lte: dateEnd,
+          },
+          receivingDate: null,
+        },
+      },
+    });
+  }
+
   public async create(accountsReceivable: AccountsReceivableDTO): Promise<AccountsReceivableDTO> {
     return this._connection.accountsReceivable.create({
       data: accountsReceivable as AccountsReceivable,
