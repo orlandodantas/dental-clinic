@@ -16,7 +16,8 @@ export default abstract class GenericService<T> implements IGenericService<T> {
   public async getByID(id: string): Promise<T> {
     const entityData = await this._model.getByID(id);
 
-    if (!entityData) throw new NotFoundError('Nem um item foi encontrado com o "ID" passado!');
+    if (!entityData)
+      throw new NotFoundError(`Nem um item foi encontrado com o seguinte "ID" passado: ${id}`);
 
     return entityData;
   }
