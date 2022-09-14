@@ -98,7 +98,7 @@ Levante o container com o banco de dados PostegreSQL:
 ```sh
 npm run compose:up
 ```
-Renomei o arquivo .env.exemple para .env:
+Renomei o arquivo .env.example para .env:
 > Unix
 ```sh
 mv .env.example .env
