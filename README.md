@@ -62,7 +62,7 @@
 
 ## Deploy da Aplicação :dash:
 
-> A API pode ser carregada a partir da seguinte URL: https://dental-clinic-bk.herokuapp.com/
+> A API pode ser carregada a partir da seguinte URL: https://dental-clinic-bk.herokuapp.com/users
 
 
 ## Pré-requisitos
